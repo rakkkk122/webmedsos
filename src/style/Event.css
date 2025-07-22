@@ -1,0 +1,311 @@
+.layout-event{
+  display:flex;
+  height:100vh;
+}
+.event-content {
+  margin-left:300px; 
+  position:relative;
+  padding: 10px; 
+  background-color: #fff;
+  padding-top:10px;
+  margin-rigth:10px;
+  transition: margin-left 0.3s ease;
+  height:100%;
+}
+
+.event-content.shifted {
+  margin-left: 80px; 
+}
+
+.layout-container {
+  display: flex; 
+  height: 100vh;
+}
+
+.navbar-event {
+  width: 10px; 
+  transition: width 0.6s ease; 
+}
+
+.navbar-event.active {
+  margin-left:0px;
+  width: 80px; 
+  transition: margin-left 0.3s ease;
+  transition: margin-right 0.3s ease;
+} 
+
+.header-event{
+    display: flex; /* Flexbox untuk elemen di satu baris */
+    justify-content: space-between; /* Elemen tersebar: kiri, tengah, kanan */
+    align-items: center; /* Vertikal rata tengah */
+    padding-left: 60px;
+    margin-rigth:20px;
+    padding-top:10px;
+  }
+  
+  /* Gaya untuk logo di kiri */
+  .header-logo-left {
+    height: 50px; /* Atur tinggi logo */
+  }
+  
+  /* Gaya untuk logo di kanan */
+  .header-logo-right {
+    height: 50px; /* Atur tinggi logo */
+    padding-right:30px;
+  }
+  
+  /* Gaya untuk judul di tengah */
+  .header-title {
+    font-size: 24px;
+    color: #002966; /* Warna teks */
+    text-align: center; /* Justifikasi teks di tengah */
+    font-weight: bold;
+    margin: 0; /* Hapus margin default */
+  }
+
+  .card-data-event{
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    border-radius:20px;
+    height:75%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+  }
+
+  .card-data-event table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.card-data-event th, .card-data-event td {
+    /* border: 1px solid #ddd; */
+    padding: 8px;
+    text-align: center;
+}
+
+.card-data-event th {
+    /* background-color: #f4f4f4; */
+    font-weight: bold;
+}
+
+.card-data-event img {
+    border-radius: 5px;
+}
+
+.icon-update {
+  color: #002966;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.icon-update:hover {
+  color: #002966;
+}
+
+.icon-delete {
+  color: #f44336;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.icon-delete:hover {
+  color: #d32f2f;
+}
+
+
+/* Gaya Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  background: #ccc;
+  color: #000;
+}
+
+.btn-delete {
+  background: #f44336;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #d32f2f;
+}
+
+.btn-cancel:hover {
+  background: #bbb;
+}
+
+.search-data-event {
+  margin-bottom: 10px;
+}
+
+.search-input {
+  width: 20px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Modal Overlay */
+.modal-addEvent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-popUpEvent {
+  background: #fff;
+  width: 90%;
+  max-width: 700px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Heading */
+.modal-popUpEvent h2 {
+  margin-top: 0;
+  color: #333;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Labels */
+.modal-popUpEvent label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #555;
+  padding-left:100px
+}
+
+/* Input Fields */
+.modal-popUpEvent input,
+.modal-popUpEvent textarea {
+  width: 70%;
+  padding: 9px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.modal-popUpEvent textarea {
+  resize: none;
+  height: 100px;
+  margin-left:100px;
+}
+
+/* File Upload */
+.modal-popUpEvent input[type="file"] {
+  padding: 5px;
+  border: none;
+}
+
+/* Modal Actions (Buttons) */
+.modal-addActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-addActions button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+/* Cancel Button */
+.btn-cancel2 {
+  background-color: #ddd;
+  color: #333;
+}
+
+.btn-cancel2:hover {
+  background-color: #ccc;
+}
+
+/* Submit Button */
+.btn-submit2 {
+  background-color: #002966;
+  color: #fff;
+}
+
+.btn-submit2:hover {
+  background-color: #002966;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.page-btn.active {
+  font-weight: bold;
+}
+
+
+/* Animation for Modal */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

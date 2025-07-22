@@ -1,0 +1,42 @@
+
+.setting-content {
+    margin-left:300px; 
+    position:relative;
+    padding: 10px; 
+    background-color: #f9f9f9;
+    padding-top:40px;
+    margin-rigth:10px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .setting-content.shifted {
+    margin-left: 80px; /* Geser sesuai lebar navbar saat mengecil */
+  }
+  .layout-container {
+    display: flex; /* Mengatur layout flex */
+    height: 100vh;/* Full height untuk menutupi layar */
+  }
+  
+  .navbar-navigation {
+    flex-shrink: 0; /* Pastikan navbar tidak mengecil */
+    width: 300px; /* Lebar tetap navbar */
+    transition: width 0.3s ease; 
+  }
+  
+  .navbar-navigation.active {
+    width: 80px; /* Lebar navbar saat mengecil */
+  }
+  
+  /* .setting-footer {
+    background-color: #002966;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  
+  .setting-footer p {
+    margin: 0;
+  } */
+  
+  

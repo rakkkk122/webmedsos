@@ -1,0 +1,308 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #002966;
+  --white: #ffffff;
+  --gray: #ffffff;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.navbar-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* =============== Navigation ================ */
+.navbar-navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--blue);
+  border-left: 10px solid var(--blue);
+  transition: 0.5s;
+  overflow: hidden;
+  /* margin-left:-716px; */
+}
+
+.navbar-navigation.active {
+  width: 80px;
+}
+
+.navbar-navigation ul {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 20px;
+}
+
+.navbar-navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.navbar-navigation ul li:hover,
+.navbar-navigation ul li.navbar-hovered {
+  background-color: var(--white);
+}
+
+.navbar-navigation ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+.navbar-navigation ul li a {
+  position: relative;
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.navbar-navigation ul li:hover a,
+.navbar-navigation ul li.navbar-hovered a {
+  color: var(--blue);
+}
+
+.navbar-navigation ul li a .navbar-icon {
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+
+.navbar-navigation ul .navbar-settings {
+  margin-top: auto;
+}
+
+.navbar-navigation ul li a .navbar-icon img {
+  width: 50%;
+  height: auto;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.navbar-navigation ul li:hover a .navbar-icon img,
+.navbar-navigation ul li.navbar-hovered a .navbar-icon img {
+  filter: brightness(0) invert(0.3);
+}
+
+.navbar-navigation ul li a .navbar-title {
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  white-space: nowrap;
+}
+
+/* --------- Curve Outside ---------- */
+.navbar-navigation ul li:hover a::before,
+.navbar-navigation ul li.navbar-hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+.navbar-navigation ul li:hover a::after,
+.navbar-navigation ul li.navbar-hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+/* ===================== Main ===================== */
+.navbar-main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.1s;
+}
+
+.navbar-main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.navbar-topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.navbar-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-header-right {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-notification-icon {
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.navbar-notification-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.navbar-toggle {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.navbar-container{
+  z-index:1000;
+}
+
+h2 {
+  padding: 0 2rem;
+  margin-top: 4rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+.navbar-logo-container {
+  overflow: hidden;
+  display: flex;
+}
+
+.navbar-logo {
+  display: flex;
+  flex-shrink: 0;
+  gap: 3rem;
+  padding: 1rem;
+  animation: navbar-infinite-scroll 10s linear infinite;
+}
+
+.navbar-logo img {
+  height: 3rem;
+  filter: grayscale(1);
+}
+
+.navbar-logo img:hover {
+  filter: grayscale(0);
+}
+/* Overlay untuk membuat halaman gelap transparan */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Konten modal */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tombol aksi */
+.modal-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.modal-cancel {
+  background: #f4f4f4;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.modal-cancel:hover {
+  background: #e4e4e4;
+}
+
+.modal-confirm {
+  background: #002966;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.modal-confirm:hover {
+  background: #001a4d;
+}
+
+@keyframes navbar-infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
